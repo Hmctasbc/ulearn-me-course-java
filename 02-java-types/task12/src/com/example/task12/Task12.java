@@ -1,6 +1,7 @@
 package com.example.task12;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class Task12 {
 
@@ -16,8 +17,8 @@ public class Task12 {
         }
         return sum;
         */
-
-        return BigDecimal.ZERO;
+        BigDecimal result = sum.multiply((percent.add(BigDecimal.valueOf(1))).pow(12));
+        return result.setScale(9, RoundingMode.HALF_UP);
     }
 
     public static void main(String[] args) {
